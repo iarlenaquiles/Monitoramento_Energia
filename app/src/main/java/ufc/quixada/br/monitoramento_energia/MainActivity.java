@@ -43,15 +43,13 @@ public class MainActivity extends AppCompatActivity {
         XYSeries series2 = new SimpleXYSeries(
                 Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Tensao");
 
-        LineAndPointFormatter series1Format = new LineAndPointFormatter(Color.RED, Color.BLUE, Color.GREEN, null);
+        LineAndPointFormatter series1Format = new LineAndPointFormatter(Color.RED, Color.BLUE, null, null);
 
-        LineAndPointFormatter series2Format = new LineAndPointFormatter(Color.YELLOW, Color.GRAY, Color.BLACK, null);
+        LineAndPointFormatter series2Format = new LineAndPointFormatter(Color.YELLOW, Color.GRAY, null, null);
 
-        series2Format.getLinePaint().setPathEffect(new DashPathEffect(new float[]{
-
-                // always use DP when specifying pixel sizes, to keep things consistent across devices:
+       /* series2Format.getLinePaint().setPathEffect(new DashPathEffect(new float[]{
                 PixelUtils.dpToPix(20),
-                PixelUtils.dpToPix(15)}, 0));
+                PixelUtils.dpToPix(15)}, 0));*/
 
         series1Format.setInterpolationParams(
                 new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
@@ -60,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
 
         plot.addSeries(series1, series1Format);
+        plot.addSeries(series2, series2Format);
 
 
         plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
