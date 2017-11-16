@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="ufc.quixada.br.monitoramento_energia.MainActivity">
+
+
+    <com.androidplot.xy.XYPlot
+        style="@style/APDefacto.Dark"
+        android:id="@+id/plot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:title="Gráfico de linha"
+        app:rangeTitle="range"
+        app:domainTitle="domain"
+        app:lineLabels="left|bottom"
+        app:lineLabelRotationBottom="-45"/>
+
+</LinearLayout>
